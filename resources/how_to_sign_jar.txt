@@ -1,0 +1,15 @@
+From http://java.sun.com/developer/technicalArticles/Programming/jnlp/
+
+After he crossstitch.jar is created from packager.jardesc, it must be 
+signed. For signing, the keytool/jarsigner combination of tools that 
+come withe SDK is sufficient. 
+
+Create a key in the keystore (or use one you already have). You'll be 
+prompted for information like first name and last. You should at least 
+fill in that information.
+
+keytool -genkey -keystore myKeys -alias thaidev
+
+Sign the JAR. Be sure to remember your password from the previous step.
+
+jarsigner -keystore myKeys crossstitch.jar thaidev
